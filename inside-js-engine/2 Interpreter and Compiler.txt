@@ -1,0 +1,10 @@
+3) After AST the code goes to INTERPRETER
+
+Interpreter translates the input code line by line on the fly
+
+4) Compiler unlike interpreter doesn't do translating on the fly
+Instead, it analyses the input code and creates the same functionality in bytecode
+Which then is processed to create machine code which goes to CPU
+
+
+
