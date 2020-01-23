@@ -1,0 +1,20 @@
+JS engine consists of several components through which data is passed
+JS Engine V8 is writen in C++
+
+1) JS code is passed to PARSER
+Parser does lexical analysis
+It splits the JS code into tokens to identify what's happening there
+
+e.g. 
+var big = 325;
+using split(' ') method can be deconstructed to 
+['var', 'big', '=', '325']
+
+2) This tokens are then passed to AST
+ABSTRACT SYNTAX TREE
+
+It creates tree like structure where everything in the code is written one by one
+all operations, declarations, everything
+AST trees can be explored in 
+https://astexplorer.net/
+
