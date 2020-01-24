@@ -1,0 +1,12 @@
+To combine the pros of interpreter and compiler Google engineers in middle 2000's came up with JIT compiler
+or JUST IN TIME COMPILER
+
+which works in the browser (inside V8) and makes just in time compilation to make code execute faster
+
+
+When interpreter finishes translation, the result is bytecode which is low level
+Then PROFILER monitors how much time was taken during the interpretation and thus how the result bytecode can be optimized
+
+If some code (e.g. loops) are executed more than one time, this code goes to compiler (JIT Compiler)
+The compiler as the app is running makes optimization so the input code run faster
+Thus, bytecode from the interpreter mixes with the result optimized MACHINE code from JIT Compiler

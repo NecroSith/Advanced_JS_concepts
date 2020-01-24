@@ -8,3 +8,21 @@ Which then is processed to create machine code which goes to CPU
 
 
 
+interpreter
+PROS:
+Faster start
+interpreter doesn't need extra time to convert input code to another language, so it starts translating immediately
+
+CONS:
+The more code it is - the more time it will take to interprete it, especially when it come to loops
+Interpretor has to go to the code under loops over and over again, taking much time
+
+
+
+Compiler
+PROS:
+Compiler doesn't go through the same code in a loop. It analyses it and e.g. replaces repeated code with just value without need to loop through same code (this is called optimization)
+Thus, exection time significantly decreases
+
+CONS:
+due to compiler has to translate input code to another language, execution time increases at the beginning
