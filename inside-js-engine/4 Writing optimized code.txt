@@ -1,0 +1,8 @@
+Some JS tolls are bad for optimizations and thus are used pretty rare
+So we should be careful while using these tools:
+
+1) eval()
+2) arguments
+3) for in // it's better use Object.keys() instead
+4) with
+5) delete
