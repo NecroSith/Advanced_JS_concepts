@@ -1,0 +1,22 @@
+Call stack
+A place where js engine keeps track of where your code is in execution
+it works based on "First In, Last Out" mode.
+It stores functions and variables as the code executes
+Consists of stack frames
+
+
+function calculate() {
+    return 4 + 5;
+}
+
+calculate() 
+Here when calculate is called it's placed on top of the call stack
+after function is executed it's removed from the stack
+
+Memory heap
+A place in memory to store all variables and al the data of the executing code
+Where all allocation happens
+
+const num = 66; 
+Here we tell js engine to alocate some memory for a num variable
+Which will be pointing to the place in memory that stores 66
