@@ -4,7 +4,6 @@ it works based on "First In, Last Out" mode.
 It stores functions and variables as the code executes
 Consists of stack frames
 
-
 function calculate() {
     return 4 + 5;
 }
@@ -12,6 +11,10 @@ function calculate() {
 calculate() 
 Here when calculate is called it's placed on top of the call stack
 after function is executed it's removed from the stack
+
+/ Calling function from within the same function (rescursion) can easily cause stack overflow
+/ When call stack continously call same function over and over again placing it on top again and again
+/ Such behaviour cause free memory to diminish rapidly
 
 Memory heap
 A place in memory to store all variables and al the data of the executing code
