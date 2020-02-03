@@ -9,6 +9,9 @@ function sayName() {
 }
 
 function getName() {
+    function a() {
+        // code
+    }
     sendRequest(); // Execution context number 3
 }
 
@@ -19,3 +22,9 @@ function sendRequest() {
 sayName(); // Before this we had global execution context only buy here in the call stack first execution context is added
 
 //* After all lines of code is done global EC is popped off from the call stack as well
+
+//* Lexical scope
+// Lexical scope determines available variables inside certain execution context
+// Lexical environment is basically where we write something
+//* All of the functions above have global lexical environment
+//! except function a() which has getName lexical environment
