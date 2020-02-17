@@ -42,3 +42,85 @@ const obj2 = {
 sayHello(); //! this.name undefined
 obj1.sayHello(); // ouputs Hello Ivan!
 obj2.sayHello(); // outputs Hello Alex!
+
+
+//* Case 1
+
+const a = function() {
+    console.log('a', this); // this refers to global object, it's okay
+    const b = function() {
+        console.log('b', this); //! this refers to a lobal object as well because there is nothing at the left of the dot in b(). b() was called from the global object
+        //! in full mode it loks like global.a(b()). To the left is window/global object
+        const c = {
+            hi() {
+                console.log('hi', this); //this refers to c object
+            }
+        }
+        c.hi();
+    }
+    b();
+};
+
+a();
+
+
+//* Case 2
+
+const obj = {
+    name: 'Yan',
+    hello() {
+        console.log(this); // this here refers to obj, it's okay
+        var go = function() {
+            console.log('go', this); //! this here refers to a global object because in full mode obj.hello() happens and then go() is called from global object. Nothing else calls it
+        }
+        go();
+    }
+}
+
+obj.hello();
+
+//* Case 2 solutions
+//* 1 - arrow functions
+const obj = {
+    name: 'Yan',
+    hello() {
+        console.log(this); // this here refers to obj, it's okay
+        var go = () => {
+            console.log('go', this);// this here refers to obj too!
+        }
+        go();
+    }
+}
+
+obj.hello();
+
+//* 2 - bind() method
+const obj = {
+    name: 'Yan',
+    hello() {
+        console.log(this); // this here refers to obj, it's okay
+        var go = function() {
+            console.log('go', this); // now this here refers to obj too
+        }
+        return go.bind(this); //* bind() explicitly tell js what this should be refered to
+    }
+}
+
+obj.hello();
+obj.hello()();
+
+
+//* 3 - bind this to variable
+const obj = {
+    name: 'Yan',
+    hello() {
+        console.log(this); // this here refers to obj, it's okay
+        const self = this;
+        var go = function() {
+            console.log('go', self); // this here refers to obj because self refers to it
+        }
+        go();
+    }
+}
+
+obj.hello();
