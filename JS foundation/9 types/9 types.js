@@ -20,6 +20,11 @@ undefined // absence of definition
 null // ansence of value
 
 typeof [] // we get 'object because array in JS is an object
+// We can check if something is an array by doing this
+Array.isArray([1, 3, 2]); // we get true
+Array.isArray(true); //we get false
+
+
 typeof function () {} //* we get 'function' but a function is actually an object as well
 
 
