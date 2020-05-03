@@ -14,18 +14,23 @@ console.log(view);
 // Solution 
 
 let view;
+let isInit = false;
+
 function initialize() {
-      view = 'page';
-      console.log('view has been set!');
-      return () => {
-        return view;
-      }
+    if (isInit === true) {
+        return null;
+    }
+    return (() => {
+        view = 'page';
+        isInit = true;
+        console.log('view has been set!');
+    })();
 }
 
 const init = initialize();
-
-init();
-init();
-init();
+ 
+init;
+init;
+init;
 
 console.log(view);
