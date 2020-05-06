@@ -16,4 +16,36 @@ function a() {}
 console.log(a.__proto__); // will get a base function object
 console.log(a.__proto__.__proto__); // will get a base object because functions are also objects
 
+let dragon = {
+  name: 'Taski',
+  fire: true,
+  smash() {
+    console.log('hit!');
+    return 5;
+  },
+  sing() {
+    if (this.fire) {
+      console.log(`I am ${this.name}! I can breathe fire`);
+    }
+  }
+};
+
+let lizard = {
+  name: 'Huty',
+  smash() {
+    console.log('lizard hit');
+    return 2;
+  }
+};
+
+// If we need to borrow some property of another object we can bind it to the object we need
+const lizardSing = dragon.smash.bind(lizard);
+console.log(lizardSing()); // Hit 5
+
+// but if want to get all the properties or many of them binding them can become convoluted
+// we can set an object's prototype instead
+lizard.__proto__ = dragon; //! Don't do this in production, __proto__ is  built in method which must not be reassigned
+lizard.sing(); // we get 'I am Huty! I can breathe fire'
+
+
 
