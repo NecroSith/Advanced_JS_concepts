@@ -32,7 +32,6 @@ let dragon = {
 
 let lizard = {
   name: 'Huty',
-  fire: true,
   smash() {
     console.log('lizard hit');
     return 2;
@@ -41,12 +40,12 @@ let lizard = {
 
 // If we need to borrow some property of another object we can bind it to the object we need
 const lizardSing = dragon.sing.bind(lizard);
-console.log(lizardSing()); // I am Huty! I can breathe fire
+console.log(lizardSing()); // undefined because lizard doesn't have fire property
 
 // but if want to get all the properties or many of them binding them can become convoluted
 // we can set an object's prototype instead
 lizard.__proto__ = dragon; //! Don't do this in production, __proto__ is  built in method which must not be reassigned
 lizard.sing(); // we get 'I am Huty! I can breathe fire'
 
-
+// Further examples can be found in Plunkr necro_sith
 
